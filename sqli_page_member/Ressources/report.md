@@ -72,3 +72,4 @@ $query = sprintf("SELECT * FROM users WHERE user='%s' AND password='%s'",
             mysql_real_escape_string($user),
             mysql_real_escape_string($password));
 ```
+
