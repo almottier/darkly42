@@ -1,0 +1,3 @@
+In the bottom of the page we can see the redirections to twitter - facebook - instagram, we can change this redirections by inspecting the source code of the page or directly in the url as it's a GET requests
+An example of a redirection to http://phishing.com :
+	http://192.168.122.55/index.php?page=redirect&site=http://phishing.com

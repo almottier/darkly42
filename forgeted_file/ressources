@@ -1,0 +1,10 @@
+thanks to /robots.txt we get :
+	/whatever/
+	/.hidden
+
+in /whatever :
+	root:8621ffdbc5698829397d97767ac13db3
+
+md5 decode : root:dragon
+
+connect to /admin with : root:dragon

