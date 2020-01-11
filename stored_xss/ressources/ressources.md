@@ -1,3 +1,10 @@
+# XSS stored injection
+
+## Exploitation
+
+Sur la page ?page=feedback: on peut voir un formulaire pour laisser un feedback ce mesage apres avoir ete submit s'affiche sans aucune verification dans la page elle meme. 
+
+Requete:
 http://192.168.122.55/?page=feedback
 xss stored
 request:
@@ -18,5 +25,11 @@ Upgrade-Insecure-Requests: 1
 
 txtName=<body onload=alert(0)>&mtxtMessage=%3Cscript%3Ealert%280%29%3C%2Fscript%3E&btnSign=Sign+Guestbook
 
+En veritee pour l'exercice le flag s'obtiens seulement en marquant le terme "script" dans le champ message.
+Pour obtenir une reelle XSS on utiliseras un onload dans le champ Name.
 
-no flag it's odd need more tests
+## Resolution
+
+Pour eviter ce type de failles on preferas encoder les caracteres speciaux 
+
+ ---- Never Trust User Input ----
