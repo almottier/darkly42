@@ -7,8 +7,8 @@ On peux changer ces redirections en inspectant le code de la page ou directement
 
 Un exemple de redirection vers http://phishing.com :
 
-```url
-	http://192.168.122.55/index.php?page=redirect&site=http://phishing.com
+```text
+http://192.168.122.55/index.php?page=redirect&site=http://phishing.com
 ```
 
 avec curl :

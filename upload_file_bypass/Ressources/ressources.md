@@ -13,6 +13,7 @@ On changeras le contenu de l'image pour y mettre du code en php (par exemple) et
 http://192.168.122.55/?page=upload
 
 request :
+
 ```
 POST /?page=upload HTTP/1.1
 Host: 192.168.122.55
@@ -46,7 +47,8 @@ Upload
 ```
 
 response :
-```
+
+```html
 <pre>
 <center>
 	<h2 style="margin-top:50px;">

